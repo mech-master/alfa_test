@@ -1,0 +1,48 @@
+{
+  "name": "alfa_test",
+  "version": "1.0.0",
+  "description": "Тестовое задание Экоситемы Альфа",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "@babel/register": "^7.25.9",
+    "@reduxjs/toolkit": "^2.4.0",
+    "body-parser": "^1.20.3",
+    "compression": "^1.7.5",
+    "cors": "^2.8.5",
+    "errorhandler": "^1.5.1",
+    "express": "^4.21.1",
+    "hbs": "^4.2.0",
+    "helmet": "^8.0.0",
+    "ignore-styles": "^5.0.1",
+    "js-tokens": "^4.0.0",
+    "loose-envify": "^1.4.0",
+    "morgan": "^1.10.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-redux": "^9.1.2",
+    "react-router": "^7.0.1"
+  },
+  "scripts": {
+    "start": "node ./src/server/server_loader.js",
+    "ls": "nodemon ./src/server/server_loader.js",
+    "client_build": "webpack --mode=development -w",
+    "wds": "webpack serve --mode=development"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "axios": "^1.7.8",
+    "babel-loader": "^9.2.1",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.3",
+    "nodemon": "^3.1.7",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  }
+}
