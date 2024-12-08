@@ -41,13 +41,20 @@ html, body, #root {
     flex-direction: row;
     flex-wrap: wrap;
     flex: 0 1 auto;
-    justify-content: space-between;
+    justify-content: left;
+    width: 100%;
+}
+
+.product-filter .filters {
+    list-style: none;
+    padding: 0;
 }
 
 .card {
-    width: 300px;
+    width: 280px;
     margin-bottom: 30px;
     padding: 10px;
+    position: relative;
 }
 .card .product-name {
     margin: 0;
@@ -59,12 +66,167 @@ html, body, #root {
     object-fit: contain;
     width: 280px;
     height: 250px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .card .description {
     padding: 0;
-    padding-right: 20px;
     margin: 0;
-    height: 38px;
+    white-space: nowrap;
     overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+}
+
+.card .favorite {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 20px;
+    top: 70px;
+    font-size: 0;
+    transform: rotate(45deg);
+    border: 2px solid red;
+    border-left-color: transparent;
+    border-top-color: transparent;
+}
+
+.card .favorite::before, .card .favorite::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid red;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.card .favorite::before {
+    border: 2px solid red;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    transform: translate(-12px, -2px) rotate(-45deg);
+}
+
+.card .favorite::after {
+    transform: translate(-2px, -12px) rotate(45deg);
+}
+
+.card .favorite.is-favorite {
+    background-color: red;
+}
+
+.card .favorite.is-favorite::after, .card .favorite.is-favorite::before {
+    background: linear-gradient(to right bottom, red 0, red 50%, transparent 50%, transparent 100%);
+}
+
+.card__price-and-stock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card .control {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btn {
+    background-color: lightgrey;
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: grey;
+}
+
+.btn-dangerous:hover {
+    background-color: red;
+    color: white;
+}
+
+.btn-green:hover {
+    background-color: green;
+    color: yellow;
+}
+
+.navigation__wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.navigation-item {
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid gray;
+}
+
+.navigation-arrow.current {
+    background-color: lightgrey;
+}
+
+.navigation-item:last-of-type {
+    margin-right: 0;
+    border-right: none;
+}
+
+.navigation-arrow {
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.detail__wrapper {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.detail__picture {
+    object-fit: contain;
+}
+
+.new-product__wrapper {
+    width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.new-product__field-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.new-product__control {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btn__send {
+    border: none;
+    color: black;
+    cursor: not-allowed;
+}
+
+.new-product__title, .new-product__description, .new-product__price, .new-product__stock {
+    width: 250px;
+}
+
+.new-product__description {
+    height: 48px;
 }

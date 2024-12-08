@@ -7,7 +7,9 @@ import PageLayer from "./page_layer";
 import {
     About,
     ErrorPage,
-    ProductList
+    ProductList,
+    CardDetail,
+    NewProduct
 } from "./pages";
 
 const App = () => {
@@ -28,6 +30,8 @@ const App = () => {
                             <Route path="/" element={<PageLayer />}>
                                 <Route index={true} element={<About />} />
                                 <Route path="products" element={<ProductList />} />
+                                <Route path="products/:id" element={<CardDetail />} />
+                                <Route path="new" element={<NewProduct />} />
                             </Route>
                         </Routes>
             }
