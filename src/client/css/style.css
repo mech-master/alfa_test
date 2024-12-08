@@ -220,7 +220,6 @@ html, body, #root {
 .btn__send {
     border: none;
     color: black;
-    cursor: not-allowed;
 }
 
 .new-product__title, .new-product__description, .new-product__price, .new-product__stock {

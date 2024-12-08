@@ -156,6 +156,7 @@ export const CardDetail = () => {
 
 export const NewProduct = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const onSend = (evt) => {
         evt.preventDefault();
         const title = document.getElementById("new-product__title");
@@ -192,6 +193,8 @@ export const NewProduct = () => {
             price: price.value,
             stock: stock.value
         }))
+
+        navigate("/products")
     }
     return(
         <section className="main-page__new-product">
